@@ -10,15 +10,31 @@ playerSelection = prompt("Choose between rock, paper and scissors: ")
 console.log(`Computer chooses: ${getComputerChoice ()} `)
 
 function playRound (playerSelection, computerSelection) {
-playerSelection = playerSelection.toLowercase;
-if (playerSelection === computerSelection){
-return alert("It's a tie!");
+  playerSelection = playerSelection.toLowerCase(); 
+if (playerSelection === computerSelection)
+{
+  return "It's a tie!"; 
 }
-else {
-  return alert("Winner not yet declared");
+  else {
+    let round = [playerSelection, computerSelection]; 
+    let winner; 
+    
+    if (round.indexOf("rock") !== -1 && round.indexOf("paper") !== -1 ){
+       winner = round.indexOf("paper");
+  }
+    else if (round.indexOf("paper") !== -1 && round.indexOf("scissors") !== -1){
+     winner = round.indexOf("scissors");
+    }
+    else if (round.indexOf("rock") !== -1 && round.indexOf("scissors") !== -1) {
+      winner = round.indexOf("rock");
+    }
+    else{
+      return 'There has been a mistake. Select again.';
+    }
+    return `The winner is ${round[winner]}`
+   }
 }
-}
-console.log (playRound (playerSelection, computerSelection));
+console.log(playRound (playerSelection, computerSelection));
 
 /* Solution 1
 Create array 
