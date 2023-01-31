@@ -17,9 +17,11 @@ function playRound (playerSelection, computerSelection) {
       let winner; 
       if (round.indexOf("rock") !== -1 && round.indexOf("paper") !== -1 ) {
          winner = round.indexOf("paper");
-      } else if (round.indexOf("paper") !== -1 && round.indexOf("scissors") !== -1) {
+      } else if (round.indexOf("paper") !== -1 &&
+      round.indexOf("scissors") !== -1) {
        winner = round.indexOf("scissors");
-      } else if (round.indexOf("rock") !== -1 && round.indexOf("scissors") !== -1) {
+      } else if (round.indexOf("rock") !== -1 &&
+      round.indexOf("scissors") !== -1) {
         winner = round.indexOf("rock");
       } else {
         console.log(`There has been a mistake. Select again`);
@@ -29,7 +31,7 @@ function playRound (playerSelection, computerSelection) {
          console.log(`You win by playing ${round[winner]}!`);
          return winner;
       } else {
-        console.log(`You lose! Computer trashed you by playing ${round[winner]}.`);
+        console.log(`You lose! Computer wins by playing ${round[winner]}.`);
           return winner;
        }
      }
@@ -49,9 +51,10 @@ function playGame (){
       computerWins++; 
     }
    }
- let finWinner;
-  if (playerWins > computerWins) {finWinner = "player"
-     } else if (computerWins > playerWins) {finWinner = "computer"}
+  let finWinner;
+  if (playerWins > computerWins) {
+    finWinner = "player"
+  } else if (computerWins > playerWins) {finWinner = "computer"}
   console.log (`${finWinner.toUpperCase()} wins game`)
   return finWinner;
 }
